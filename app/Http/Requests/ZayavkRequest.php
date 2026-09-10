@@ -24,7 +24,6 @@ class ZayavkRequest extends FormRequest
     {
         return [
             'data'=>'required',
-            'place'=>'required',
             'status'=>'required',
             'pay'=>'required',
         ];

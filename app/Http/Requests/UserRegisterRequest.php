@@ -24,7 +24,8 @@ class UserRegisterRequest extends FormRequest
             'email'=>'required|unique:users',
             'number'=>'required|unique:users',
             'login'=>'required|unique:users',
-            'role'=>'required',
+            'password' => 'required|min:6',
+            
         ];
     }
 }
