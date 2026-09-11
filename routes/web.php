@@ -16,3 +16,4 @@ Route::get('admin',[UserController::class, 'admin'])->name('admin');
 Route::post('/placecreate', [PlaceController::class, 'placeCreate'])->name('placeCreate');
 Route::get('zayavka',[UserController::class, 'zayavka'])->name('zayavka');
 Route::post('/orderCreate', [ZayavkiController::class, 'orderCreate'])->name('orderCreate');
+Route::post('/status/{zayavk}', [ZayavkiController::class, 'status'])->name('status');

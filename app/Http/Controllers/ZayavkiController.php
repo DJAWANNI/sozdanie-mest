@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StatusRequest;
 use App\Http\Requests\ZayavkRequest;
 use App\Models\Zayavk;
 use Illuminate\Http\Request;
@@ -19,5 +20,12 @@ class ZayavkiController extends Controller
         $zayavka->save();
         $zayavki = Zayavk::all();
         return view('index', compact('zayavki'));
+    }
+    public function status(StatusRequest $request, Zayavk $zayavk) 
+    {
+        $zayavk -> status = $request -> status;
+        $zayavk->save();
+        return back();
+        
     }
 }

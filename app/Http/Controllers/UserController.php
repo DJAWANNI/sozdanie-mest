@@ -26,7 +26,8 @@ class UserController extends Controller
     public function admin()
     {
         $places = Place::all();
-        return view('admin', compact('places'));
+        $zayavki = Zayavk::all();
+        return view('admin', compact('places','zayavki'));
     }
   
  public function zayavka()
@@ -38,7 +39,7 @@ class UserController extends Controller
     public function index()
     {
          $places = Place::all();
-        $zayavki = Zayavk::all();
+        $zayavki = Zayavk::where('user_id', auth::id())->with(['place'])->get();
         return view('index', compact('places', 'zayavki'));
     }
     public function register(UserRegisterRequest $request)

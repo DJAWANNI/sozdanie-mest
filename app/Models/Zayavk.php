@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['data','place_id','pay'])]
+#[Fillable(['data','place_id','pay', 'status'])]
 class Zayavk extends Model
 {
      public function place(){

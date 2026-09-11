@@ -2,17 +2,21 @@
 
 <body>
     <x-header />
+        @auth
+<div class="container">
+        <div class="row justify-content-center">
+<h1 class="bd-title mb-0" id="content">Заявки</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
 
-  
-    @if(auth()->user())
         @isset($zayavki)
     @foreach ($zayavki as $zayavk)
-      <div class="card" style="width: 18rem;">
+      <div class="card mx-1" style="width: 18rem;">
   <img src="{{ $zayavk->place->image }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"> {{ $zayavk->place->name }}</h5>
     <span class="badge text-bg-secondary">{{ $zayavk->pay=='nal'? 'Наличные':'Безналичные'}}</span>
     <span class="badge text-bg-secondary">  {{ $zayavk->data }}</span>
+    <span class="badge text-bg-{{ $zayavk->status=='new'? 'secondary':($zayavk->status=='soglasovana' ? 'primary':'success')}}">{{ $zayavk->status=='new'? 'Новый':($zayavk->status=='soglasovana' ? 'Принята':'Завершена')}}</span>
     <p class="card-text">  {{ $zayavk->place->opisanie }}</p>
      <div class="mb-3">
         <form action="{{ route('placeCreate') }}" method="post">@csrf
@@ -46,10 +50,50 @@
 </div>
     @endforeach
     @endisset
-    @else
-Eror
+    </div>
+    </div>
+@endauth
+    </div>
 
-    @endif
+
+<div class="container mb-5 mt-5">
+        <div class="row justify-content-center">
+            
+            
+<h1 class="bd-title mb-0" id="content">Места</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+        @isset($places)
+    @foreach ($places as $place)
+      <div class="card mx-1" style="width: 18rem;">
+  <img src="{{ $place->image }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> {{ $place->name }}</h5>
+    <p class="card-text">  {{ $place->opisanie }}</p>
+     <div class="mb-3">
+      
+        
+        <!-- коменты нужно условие -->
+         <div class="accordion" id="accordionExample">
+
+  </div>
+
+
+  </div>
+  
+
+  </div>
+</div>
+    @endforeach
+    @endisset
+    </div>
+    </div>
+
+    </div>
+
+
+
+    
 
 
     <x-scripts />
