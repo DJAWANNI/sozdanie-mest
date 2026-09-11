@@ -28,6 +28,7 @@
         <!-- коменты нужно условие -->
          <div class="accordion" id="accordionExample">
  <div class="accordion-item">
+    <!-- sdsdds -->
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $zayavk->id }}" aria-expanded="false" aria-controls="{{ $zayavk->id }}">
         Коментарии
