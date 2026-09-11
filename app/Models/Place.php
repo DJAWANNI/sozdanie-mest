@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-#[Fillable(['name', 'opisanie', 'image'])]
+#[Fillable(['name', 'opisanie','image'])]
 class Place extends Model
 {
     //

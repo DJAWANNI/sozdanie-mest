@@ -1,3 +1,7 @@
+<x-head />
+
+<body>
+    <x-header />
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
@@ -19,3 +23,7 @@
         </div>
     </div>
 </div>
+  <x-scripts />
+</body>
+
+</html>

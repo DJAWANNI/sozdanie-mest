@@ -3,17 +3,18 @@
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         @auth
         <li><a href="#" class="nav-link px-2 link-secondary">Заявки</a></li>
-        <li><a href="#" class="nav-link px-2">Создать заявку</a></li>
-
-        <li><a href="#" class="nav-link px-2 text-danger">Админ панель</a></li>
+        <li><a href="{{ route('zayavka') }}" class="nav-link px-2" >Создать заявку</a></li>
+@if(Auth::user()->role == 'admin')
+        <li><a class="nav-link px-2 text-danger" href="{{ route('admin') }}">Админ панель</a></li>
+        @endif
         @endauth
     </ul>
     <div class="col-md-3 text-end">
         @if(auth()->user())
         <a type="button" class="btn btn-primary" href="{{ route('logout') }}">Выход</a>
         @else
-         <a type="button" class="btn btn-outline-primary me-2" href="{{ url('/?regauth=auth') }}">Вход</a>
-          <a type="button" class="btn btn-primary" href="{{ url('/?regauth=0') }}">Регистрация</a>
+         <a type="button" class="btn btn-outline-primary me-2" href="{{ route('authPage') }}">Вход</a>
+          <a type="button" class="btn btn-primary" href="{{ route('registerPage') }}">Регистрация</a>
        @endif
 
           
