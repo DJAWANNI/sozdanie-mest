@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRegisterRequest;
 use App\Http\Requests\UserAuthRequest;
+use App\Models\Otzivi;
 use App\Models\Place;
 use App\Models\User;
 use App\Models\Zayavk;
@@ -39,7 +40,8 @@ class UserController extends Controller
     public function index()
     {
          $places = Place::all();
-        $zayavki = Zayavk::where('user_id', auth::id())->with(['place'])->get();
+        $zayavki = Zayavk::where('user_id', auth::id())->with(['place', 'otzivi'])->get();
+        // $otzivi = Otzivi::where('user_id', auth::id())->with(['zayavk', ''])->get();
         return view('index', compact('places', 'zayavki'));
     }
     public function register(UserRegisterRequest $request)

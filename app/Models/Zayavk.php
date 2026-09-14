@@ -14,4 +14,7 @@ class Zayavk extends Model
     public function user(){
       return $this->belongsTo(User::class);
     }
+        public function otzivi(){
+      return $this->hasMany(Otzivi::class);
+    }
 }

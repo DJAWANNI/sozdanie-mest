@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">
-                <form action="{{ route('orderCreate') }}" method="post">
+                <form action="{{ route('zayavkCreate') }}" method="post">
                     @csrf
                     <fieldset>
                         <legend>Заполните заявку</legend>

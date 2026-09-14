@@ -29,6 +29,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+       public function otzivi(){
+      return $this->hasMany(Otzivi::class);
+    }
  
 }
 

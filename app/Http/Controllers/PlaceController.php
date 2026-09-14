@@ -19,4 +19,9 @@ class PlaceController extends Controller
         $place->save();
         return redirect()->back();
     }
+    public function destroy(Place $place)
+    {
+        $place->delete();
+        return redirect()->back();
+    }
 }

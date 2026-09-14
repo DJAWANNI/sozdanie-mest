@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OtziviController;
 use App\Http\Controllers\PlaceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -15,5 +16,7 @@ Route::get('authpage',[UserController::class, 'authPage'])->name('authPage');
 Route::get('admin',[UserController::class, 'admin'])->name('admin');
 Route::post('/placecreate', [PlaceController::class, 'placeCreate'])->name('placeCreate');
 Route::get('zayavka',[UserController::class, 'zayavka'])->name('zayavka');
-Route::post('/orderCreate', [ZayavkiController::class, 'orderCreate'])->name('orderCreate');
+Route::post('/ZayavkCreate', [ZayavkiController::class, 'zayavkCreate'])->name('zayavkCreate');
 Route::post('/status/{zayavk}', [ZayavkiController::class, 'status'])->name('status');
+Route::post('/otzivCreate/{zayavk}', [OtziviController::class, 'otzivCreate'])->name('otzivCreate');
+Route::post('/destroy/{place}', [PlaceController::class, 'destroy'])->name('destroy');

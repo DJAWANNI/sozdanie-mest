@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
             'password' => 'Demo77',
             'role' => 'admin',
         ]);
+         User::create([
+            'name' => 'admin1',
+            'email' => 'admin1@admin1',
+            'number'=> '11111111111',
+            'login' => 'admin',
+            'password' => 'admin',
+            'role' => 'admin',
+        ]);
     }
 }
